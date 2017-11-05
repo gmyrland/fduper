@@ -26,7 +26,7 @@ is_fduper <- function(.data) inherits(.data, "fduper")
 #' as_fduper: Add fduper to object class
 #' @export
 as_fduper <- function(.data) {
-  class(.data) <- c("fduper", "tbl_df", "tbl", "data.frame")
+  class(.data) <- c("fduper", setdiff(class(.data), "fduper"))
   (.data)
 }
 
