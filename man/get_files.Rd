@@ -4,7 +4,8 @@
 \alias{get_files}
 \title{get_files: Collect file paths}
 \usage{
-get_files(path, pattern = NULL, all.files = TRUE, recursive = TRUE, ...)
+get_files(path, pattern = NULL, all.files = TRUE, recursive = TRUE,
+  ignore.case = FALSE)
 }
 \description{
 get_files: Collect file paths

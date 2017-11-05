@@ -4,7 +4,8 @@
 \alias{get_dirs}
 \title{get_dirs: Collect directory paths}
 \usage{
-get_dirs(path, pattern = NULL, all.files = TRUE, recursive = TRUE, ...)
+get_dirs(path, pattern = NULL, all.files = TRUE, recursive = TRUE,
+  ignore.case = FALSE)
 }
 \description{
 get_dirs: Collect directory paths
