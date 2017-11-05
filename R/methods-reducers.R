@@ -26,3 +26,14 @@ reduce_n.fduper <- function(.data, .n = 2, .n_max = Inf, ...) {
     ungroup
 }
 
+#' Label groups of items sharing certain values
+#' @export
+identify <- function(.data, ...) {
+  UseMethod("identify")
+}
+#' @export
+identify.fduper <- function(.data, ...) {
+  .data$group <- NULL
+  .data$group <- group_indices(.data, ...)
+  (.data)
+}
