@@ -1,0 +1,14 @@
+# .gitignore
+
+.Rproj.user
+.Rhistory
+.RData
+/*.tar.gz
+/*.Rcheck/
+*-Ex.R
+vignettes/*.html
+vignettes/*.pdf
+/*_cache/
+/cache/
+*.utf8.md
+*.knit.md

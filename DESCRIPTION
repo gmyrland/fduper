@@ -1,0 +1,11 @@
+Package: fduper
+Version: 0.0.0.9000
+Title: Eliminate Duplicate Files
+Description: The fduper package provides a method for scripting re-useable file
+    deduplication workflows using chained operations.
+Authors@R: person("Glen", "Myrland", email = "glenmyrland@gmail.com", role = c("aut", "cre"))
+License: 
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Imports:
