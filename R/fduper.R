@@ -2,6 +2,7 @@
 #'
 #' @import dplyr
 #' @export %>%
+## @exportPattern ^[\.]
 "fduper"
 
 #' fduper: Constructor
