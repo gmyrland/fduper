@@ -1,0 +1,3 @@
+# Don't modify line endings on line ending test docs
+*.unix -crlf
+*.dos  -crlf

@@ -32,3 +32,9 @@ as_fduper <- function(.data) {
 print.fduper <- function(.data, ...) {
   as_fduper(NextMethod("print", .data))
 }
+
+#' sample_path: Sample documents for testing
+#' @export
+sample_path <- function() {
+  system.file(package="fduper", "sample")
+}
