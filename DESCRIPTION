@@ -9,3 +9,5 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 Imports:
+    dplyr,
+    digest,

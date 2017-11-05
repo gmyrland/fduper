@@ -29,3 +29,4 @@ get_hash_ <- function(f, algo="md5") {
   if (!file.exists(f)) return(NA)
   digest::digest(file=f, algo=algo)
 }
+get_hash <- Vectorize(get_hash_, "f")
