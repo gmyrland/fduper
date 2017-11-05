@@ -4,15 +4,13 @@
 \alias{get_dirs}
 \title{get_dirs: Collect directory paths}
 \usage{
-get_dirs(path, pattern = NULL, all.files = TRUE, recursive = TRUE,
+get_dirs(path, pattern = NULL, all.dirs = TRUE, recursive = TRUE,
   ignore.case = FALSE)
 }
 \description{
 get_dirs: Collect directory paths
 }
 \examples{
-get_dirs("~/data", recursive=TRUE)
-get_dirs("~/data", recursive=FALSE)
-get_dirs("~/source", "\\\\.git$", recursive=TRUE)
-get_files(get_dirs("~/source", "\\\\.git$")) # for example, to remove from file list
+get_dirs(sample_path(), recursive=TRUE)
+get_dirs(sample_path(), recursive=FALSE)
 }

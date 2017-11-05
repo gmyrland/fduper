@@ -23,6 +23,7 @@ get_files <- function(path, pattern = NULL, all.files = TRUE,
 #' get_dirs(sample_path(), recursive=FALSE)
 #' @export
 get_dirs <- function(path, pattern=NULL, all.dirs = TRUE, recursive = TRUE, ignore.case = FALSE) {
+  # pattern should apply to directory, not the files probably?
   paths <- list.files(path, pattern = pattern, recursive = recursive,
                       all.files = all.dirs, ignore.case = ignore.case,
                       full.names = TRUE, include.dirs = TRUE, no.. = TRUE

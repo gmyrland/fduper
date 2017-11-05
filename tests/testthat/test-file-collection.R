@@ -55,3 +55,29 @@ test_that("get_dirs", {
   expect_error(get_dirs(sample_path(), no.. = TRUE))
   expect_error(get_dirs(sample_path(), zzz = TRUE))
 })
+
+test_that("add_files", {
+  expect_equal(1, fduper() %>% add_files(paste0(sample_path(), "/root_file.txt")) %>% nrow)
+  expect_equal(5, fduper() %>%
+                 add_files(list.files(sample_path(), pattern = "*.txt", full.names = TRUE, recursive = TRUE)) %>%
+                 nrow)
+  expect_equal(0, fduper() %>% add_files(sample_path()) %>% nrow)
+})
+
+test_that("add_dirs", {
+  expect_equal(10, fduper() %>% add_dirs(sample_path()) %>% nrow)
+  expect_equal(0, fduper() %>% add_dirs(paste0(sample_path(), "/root_file.txt")) %>% nrow)
+  expect_equal(5, fduper() %>% add_dirs(sample_path(), pattern=".txt$") %>% nrow) # this isn't obvious
+})
+
+test_that("remove_dirs", {
+  expect_equal(0, fduper() %>%
+                 add_files(paste0(sample_path(), "/root_file.txt")) %>%
+                 add_files(paste0(sample_path(), "/root_file.txt")) %>%
+                 remove_files(paste0(sample_path(), "/root_file.txt")) %>%
+                 nrow)
+  expect_equal(9, fduper() %>% add_dirs(sample_path()) %>%
+                 remove_files(paste0(sample_path(), "/various/file")) %>%
+                 add_files(list.files(sample_path(), pattern = "*.txt", full.names = TRUE, recursive = TRUE)) %>%
+                 nrow)
+})

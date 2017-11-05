@@ -11,7 +11,7 @@ get_files(path, pattern = NULL, all.files = TRUE, recursive = TRUE,
 get_files: Collect file paths
 }
 \examples{
-get_files("~/data", recursive=TRUE)
-get_files("~/data", recursive=FALSE)
-get_files("~/data", "*.bz2$", recursive=TRUE)
+get_files(sample_path(), recursive=TRUE)
+get_files(sample_path(), recursive=FALSE)
+get_files(sample_path(), "*.txt$")
 }
