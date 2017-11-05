@@ -15,7 +15,7 @@ get_directoryname <- function(path) {
 #' Get file extension
 #' @export
 get_ext <- function(path) {
-  sub("^.*\\.", "", path)
+  sub("^.*[\\\\/][^\\.]+", "", path)
 }
 
 #' Get file created date
