@@ -12,6 +12,8 @@
 #' @return A fduper object
 #' @export
 fduper <- function(path=character(0), ...) {
+  if (length(path) == 1 && file.info(path)$isdir)
+    path <- get_files(path)
   .data <- tibble(path, ...)
   class(.data) <- c("fduper", class(.data))
   (.data)
