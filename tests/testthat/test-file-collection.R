@@ -1,4 +1,4 @@
-context("File Collection")
+context("test-file-collection.R")
 
 test_that("sample_file_structure_integrity", {
   expect_true(dir.exists(sample_path()))
