@@ -10,12 +10,12 @@ to_text_file.fduper <- function(.data, file, overwrite=FALSE) {
       if (!tolower(resp) %in% c("y", "yes"))
         stop("File write cancelled")
     }
+    file.remove(file)
   }
   if (!"group" %in% names(.data)) stop("Use identify(<features>) to apply group ids")
-  file.remove(file)
   .data %>%
     group_by(group) %>%
-    do({
+    dplyr::do({
       write(c(.$path, ""), file, append = TRUE)
       .
     })
