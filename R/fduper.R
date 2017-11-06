@@ -1,7 +1,8 @@
 #' fduper: Eliminate Duplicate Files
 #'
-#' @import dplyr
-#' @export %>%
+## @import dplyr
+#' @importFrom dplyr %>%
+#' @importFrom dplyr tibble
 ## @exportPattern ^[\.]
 "fduper"
 

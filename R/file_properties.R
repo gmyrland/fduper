@@ -37,15 +37,14 @@ get_size <- function(path) {
 }
 
 #' Get file hash using various algorithms
-#' @export
 get_hash_ <- function(path, algo="md5") {
   if (!file.exists(path)) return(NA)
   digest::digest(file=path, algo=algo)
 }
+#' @export
 get_hash <- Vectorize(get_hash_, "path")
 
 #' Get file hash of dos line-ending version of file
-#' @export
 get_dos_ <- function(path, algo="md5", default=get_hash(path)) {
   if (!file.exists(path)) return(NA)
   t <- tempfile()
@@ -55,10 +54,10 @@ get_dos_ <- function(path, algo="md5", default=get_hash(path)) {
   if(grepl("unix2dos: Binary", res[1])) return(default)
   get_hash_(t, algo)
 }
+#' @export
 get_dos <- Vectorize(get_dos_, c("path", "algo", "default"))
 
 #' Get file hash of unix line-ending version of file
-#' @export
 get_unix_ <- function(path, algo="md5", default=get_hash(path)) {
   if (!file.exists(path)) return(NA)
   t <- tempfile()
@@ -68,6 +67,7 @@ get_unix_ <- function(path, algo="md5", default=get_hash(path)) {
   if(grepl("dos2unix: Binary", res[1])) return(default)
   get_hash_(t, algo)
 }
+#' @export
 get_unix <- Vectorize(get_unix_, c("path", "algo", "default"))
 
 

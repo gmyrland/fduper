@@ -27,6 +27,7 @@ reduce_n.fduper <- function(.data, .n = 2, .n_max = Inf, ...) {
 }
 
 #' Label groups of items sharing certain values
+#' @importFrom dplyr group_indices
 #' @export
 identify <- function(.data, ...) {
   UseMethod("identify")
