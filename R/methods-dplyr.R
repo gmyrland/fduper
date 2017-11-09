@@ -14,6 +14,14 @@ arrange.fduper <- function(.data, ...) {
   as_fduper(NextMethod("arrange", .data, ...))
 }
 
+#' fduper wrapper for dplyr select
+#' @importFrom dplyr select
+#' @export
+select.fduper <- function(.data, ...) {
+  as_fduper(NextMethod("select", .data, ...))
+}
+
+
 #' fduper wrapper for dplyr filter
 #' @importFrom dplyr filter
 #' @export

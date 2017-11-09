@@ -36,7 +36,8 @@ validate.fduper <- function(.data, chunk_size = 1e6) {
         return(filter(.data, FALSE))
       }
       .data
-    }) %>% ungroup
+    }) %>%
+    ungroup %>% as_fduper
 }
 
 

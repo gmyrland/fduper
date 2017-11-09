@@ -4,7 +4,7 @@
 \alias{validate}
 \title{Validate}
 \usage{
-validate(.data)
+validate(.data, ...)
 }
 \description{
 Validate
