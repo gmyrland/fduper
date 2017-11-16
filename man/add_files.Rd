@@ -2,10 +2,21 @@
 % Please edit documentation in R/methods.R
 \name{add_files}
 \alias{add_files}
-\title{add_files: Add character vector of files to fduper object}
+\title{Add files to fduper object path listing}
 \usage{
 add_files(.data, files)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{files}{A vector of file paths}
+}
+\value{
+The modified fduper object with the additional paths added
+}
 \description{
-add_files: Add character vector of files to fduper object
+Provide a character vector of file paths to add to the paths in the fduper object.
+}
+\examples{
+f \%>\% add_files("~/my_file.txt")
 }

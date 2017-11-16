@@ -6,6 +6,16 @@
 \usage{
 add_size(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with file sizes in bytes
+}
 \description{
-Add file size in bytes
+Adds or overwrites a column named "size", containing the file size in bytes
+for each file.
+}
+\seealso{
+\code{\link{get_size}}
 }

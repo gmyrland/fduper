@@ -1,6 +1,16 @@
 # utils
 
-#' get_files: Collect file paths
+#' Collect file paths
+#'
+#' The \code{get_files} function addresses some of the quirks with list.files
+#' and uses defaults that are more useful for fduper, such as \code{recursive = TRUE}
+#'
+#' @param path A character vector of path names to search
+#' @param pattern An optional regex pattern to match results against
+#' @param all.files Whether or not to include files starting with period, with default as TRUE.
+#' @param recursive Whether or not to search path recursively, with default as TRUE
+#' @param ignore.case Whether or not to use case-sensitive pattern matching, with default as FALSE
+#' @return A character vector containing the resulting file paths
 #' @examples
 #' get_files(sample_path(), recursive=TRUE)
 #' get_files(sample_path(), recursive=FALSE)
@@ -17,7 +27,17 @@ get_files <- function(path, pattern = NULL, all.files = TRUE,
   (paths)
 }
 
-#' get_dirs: Collect directory paths
+#' Collect directory paths
+#'
+#' The \code{get_dirs} function addresses some of the quirks with list.files
+#' and uses defaults that are more useful for fduper, such as \code{recursive = TRUE}
+#'
+#' @param path A character vector of path names to search
+#' @param pattern An optional regex pattern to match results against
+#' @param all.dirs Whether or not to include directories starting with period, with default as TRUE.
+#' @param recursive Whether or not to search path recursively, with default as TRUE
+#' @param ignore.case Whether or not to use case-sensitive pattern matching, with default as FALSE
+#' @return A character vector containing the resulting directory paths
 #' @examples
 #' get_dirs(sample_path(), recursive=TRUE)
 #' get_dirs(sample_path(), recursive=FALSE)

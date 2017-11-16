@@ -6,6 +6,16 @@
 \usage{
 add_directoryname(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with directory names
+}
 \description{
-Add directory name
+Adds or overwrites a column named "directoryname", containing the directory
+of each file.
+}
+\seealso{
+\code{\link{get_directoryname}}
 }

@@ -2,10 +2,28 @@
 % Please edit documentation in R/methods-reducers.R
 \name{reduce_n}
 \alias{reduce_n}
-\title{Reduce fduper data to items sharing certain values}
+\title{Reduce fduper data to files which share certain values with other files.}
 \usage{
 reduce_n(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{...}{Column names for grouping files as duplicates or potential duplicates}
+
+\item{.n}{The minimum group size, with a default of 2}
+
+\item{.n_max}{The maximum group size, with a default of Inf}
+}
+\value{
+The modified fduper object with non-duplicates removed
+}
 \description{
-Reduce fduper data to items sharing certain values
+Groups the files in the fduper dataset by the columns pass in the dot arguments,
+then eliminates groups that do not contain two or more files. The \code{reduce_n} variant
+allows for a mininum and maximum group size specification, where the defaults
+behave the same as the regular \code{reduce} function.
+}
+\examples{
+f \%>\% reduce_n(size, .n=5)
 }

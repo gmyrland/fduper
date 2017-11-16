@@ -6,6 +6,16 @@
 \usage{
 add_modified(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with file modified dates
+}
 \description{
-Add file modified date
+Adds or overwrites a column named "modified", containing the file modification date
+of each file.
+}
+\seealso{
+\code{\link{get_modified}}
 }

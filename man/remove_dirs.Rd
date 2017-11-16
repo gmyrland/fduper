@@ -2,10 +2,30 @@
 % Please edit documentation in R/methods.R
 \name{remove_dirs}
 \alias{remove_dirs}
-\title{remove_dir: Remove files in directories from fduper object}
+\title{Remove files in directories to fduper object path listing}
 \usage{
-remove_dirs(.data, path, ...)
+remove_dirs(.data, path, recursive = TRUE, ...)
+}
+\arguments{
+\item{.data}{A fduper object}
+
+\item{path}{A vector of directory paths}
+
+\item{recursive}{A logical indicating whether or not to search the directories
+recursively, with default of TRUE}
+
+\item{...}{Additional arguments to pass to the \code{get_files} command}
+}
+\value{
+The modified fduper object with the additional paths removed
 }
 \description{
-remove_dir: Remove files in directories from fduper object
+Provide a character vector of directory paths. The directory paths are searched
+and the resulting files are removed from the paths in the fduper object.
+}
+\examples{
+f \%>\% remove_dirs("~/my_directory")
+}
+\seealso{
+\code{\link{get_files}}
 }

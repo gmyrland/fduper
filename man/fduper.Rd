@@ -2,23 +2,22 @@
 % Please edit documentation in R/fduper.R
 \name{fduper}
 \alias{fduper}
-\alias{fduper}
-\title{fduper: Eliminate Duplicate Files}
+\title{fduper constructor}
 \usage{
-fduper(path = character(0), ...)
-
 fduper(path = character(0), ...)
 }
 \arguments{
-\item{path}{A character vector of paths}
+\item{path}{A character vector of paths to be added recursively}
 
-\item{...}{Additional columns to add to the tibble}
+\item{...}{Additional columns to add to the underlying fduper tibble}
 }
 \value{
-A fduper object
+A fduper object, to be piped to other methods for processing.
 }
 \description{
-fduper: Eliminate Duplicate Files
-
-fduper: Constructor
+Create a fduper object to be passed to subsequent methods from the fduper
+package.
+}
+\examples{
+fduper()
 }

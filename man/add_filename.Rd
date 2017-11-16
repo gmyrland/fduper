@@ -6,6 +6,16 @@
 \usage{
 add_filename(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with filenames
+}
 \description{
-Add filename
+Adds or overwrites a column named "filename", containing the filename (without
+directory) of the path for each file.
+}
+\seealso{
+\code{\link{get_filename}}
 }

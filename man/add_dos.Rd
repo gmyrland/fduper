@@ -6,6 +6,16 @@
 \usage{
 add_dos(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with dos file hashes
+}
 \description{
-Add file hash for dos line-endings
+Adds or overwrites a column named "dos", containing the file hash
+for each file, as computed by the \code{get_dos} function.
+}
+\seealso{
+\code{\link{get_dos}}
 }

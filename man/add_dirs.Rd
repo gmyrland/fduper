@@ -2,10 +2,30 @@
 % Please edit documentation in R/methods.R
 \name{add_dirs}
 \alias{add_dirs}
-\title{add_dirs: Add files in directories to fduper object}
+\title{Add files in directories to fduper object path listing}
 \usage{
 add_dirs(.data, path, recursive = TRUE, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{path}{A vector of directory paths}
+
+\item{recursive}{A logical indicating whether or not to search the directories
+recursively, with default of TRUE}
+
+\item{...}{Additional arguments to pass to the \code{get_files} command}
+}
+\value{
+The modified fduper object with the additional paths added
+}
 \description{
-add_dirs: Add files in directories to fduper object
+Provide a character vector of directory paths. The directory paths are searched
+and the resulting files are added to the paths in the fduper object.
+}
+\examples{
+f \%>\% add_dirs("~/my_directory")
+}
+\seealso{
+\code{\link{get_files}}
 }

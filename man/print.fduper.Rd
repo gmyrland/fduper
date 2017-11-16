@@ -2,10 +2,17 @@
 % Please edit documentation in R/fduper.R
 \name{print.fduper}
 \alias{print.fduper}
-\title{print: Print fduper object}
+\title{Print fduper object}
 \usage{
 \method{print}{fduper}(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object to be printed}
+}
+\value{
+The unmodified .data object
+}
 \description{
-print: Print fduper object
+To provides a custom print method for fduper object.
+At the moment, this simply wraps the next print method.
 }

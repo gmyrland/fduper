@@ -2,10 +2,13 @@
 % Please edit documentation in R/fduper.R
 \name{sample_path}
 \alias{sample_path}
-\title{sample_path: Sample documents for testing}
+\title{Sample documents path for testing}
 \usage{
 sample_path()
 }
+\value{
+A path to some test files within the package directory
+}
 \description{
-sample_path: Sample documents for testing
+For testing workflows, this sample document path can be used
 }

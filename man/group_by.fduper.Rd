@@ -6,6 +6,12 @@
 \usage{
 \method{group_by}{fduper}(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The fduper object after processing
+}
 \description{
 fduper wrapper for dplyr group_by
 }

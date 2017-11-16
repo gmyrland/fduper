@@ -2,10 +2,16 @@
 % Please edit documentation in R/fduper.R
 \name{is_fduper}
 \alias{is_fduper}
-\title{is_fduper: Check if object is class fduper}
+\title{Determine if object is class fduper}
 \usage{
 is_fduper(.data)
 }
+\arguments{
+\item{.data}{A object to be evaluated}
+}
+\value{
+TRUE if object is of class fduper
+}
 \description{
-is_fduper: Check if object is class fduper
+Check if object contains the class "fduper".
 }

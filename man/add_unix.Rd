@@ -6,6 +6,16 @@
 \usage{
 add_unix(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with unix file hashes
+}
 \description{
-Add file hash for unix line-endings
+Adds or overwrites a column named "unix", containing the file hash
+for each file, as computed by the \code{get_unix} function.
+}
+\seealso{
+\code{\link{get_unix}}
 }

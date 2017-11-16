@@ -2,10 +2,22 @@
 % Please edit documentation in R/methods.R
 \name{keep_files_by_pattern}
 \alias{keep_files_by_pattern}
-\title{keep_files_by_pattern: Keep files by matching regex}
+\title{Keep files from fduper object path listing matching the provided regex}
 \usage{
 keep_files_by_pattern(.data, files)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{files}{A vector of file paths}
+}
+\value{
+The modified fduper object with non-matching paths removed
+}
 \description{
-keep_files_by_pattern: Keep files by matching regex
+Uses the provided regex pattern to compare the paths in the fduper object, and
+removes the files not matching the regex pattern.
+}
+\examples{
+f \%>\% keep_files_by_pattern("\\\\.txt$")
 }

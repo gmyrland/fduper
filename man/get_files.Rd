@@ -2,13 +2,28 @@
 % Please edit documentation in R/utils.R
 \name{get_files}
 \alias{get_files}
-\title{get_files: Collect file paths}
+\title{Collect file paths}
 \usage{
 get_files(path, pattern = NULL, all.files = TRUE, recursive = TRUE,
   ignore.case = FALSE)
 }
+\arguments{
+\item{path}{A character vector of path names to search}
+
+\item{pattern}{An optional regex pattern to match results against}
+
+\item{all.files}{Whether or not to include files starting with period, with default as TRUE.}
+
+\item{recursive}{Whether or not to search path recursively, with default as TRUE}
+
+\item{ignore.case}{Whether or not to use case-sensitive pattern matching, with default as FALSE}
+}
+\value{
+A character vector containing the resulting file paths
+}
 \description{
-get_files: Collect file paths
+The \code{get_files} function addresses some of the quirks with list.files
+and uses defaults that are more useful for fduper, such as \code{recursive = TRUE}
 }
 \examples{
 get_files(sample_path(), recursive=TRUE)

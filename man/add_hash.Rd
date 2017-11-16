@@ -6,6 +6,16 @@
 \usage{
 add_hash(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with file hashes
+}
 \description{
-Add file hash
+Adds or overwrites a column named "hash", containing the file hash
+for each file, as computed by the \code{get_hash} function.
+}
+\seealso{
+\code{\link{get_hash}}
 }

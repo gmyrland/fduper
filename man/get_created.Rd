@@ -6,6 +6,12 @@
 \usage{
 get_created(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The file created date of the file
+}
 \description{
-Get file created date
+Returns the file created date of a file
 }

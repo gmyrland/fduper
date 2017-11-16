@@ -6,6 +6,16 @@
 \usage{
 add_created(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with file created dates
+}
 \description{
-Add file created date
+Adds or overwrites a column named "created", containing the file created date
+of each file.
+}
+\seealso{
+\code{\link{get_created}}
 }

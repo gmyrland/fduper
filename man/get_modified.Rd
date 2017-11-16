@@ -6,6 +6,12 @@
 \usage{
 get_modified(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The file modified date of the file
+}
 \description{
-Get file modified date
+Returns the file modified date of a file
 }

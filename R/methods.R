@@ -25,7 +25,15 @@
 ################
 # File Selection
 
-#' add_files: Add character vector of files to fduper object
+#' Add files to fduper object path listing
+#'
+#' Provide a character vector of file paths to add to the paths in the fduper object.
+#'
+#' @param .data A fduper object
+#' @param files A vector of file paths
+#' @return The modified fduper object with the additional paths added
+#' @examples
+#' f %>% add_files("~/my_file.txt")
 #' @export
 add_files <- function(.data, files) {
   UseMethod("add_files")
@@ -38,7 +46,20 @@ add_files.fduper <- function(.data, files) {
   dplyr::bind_rows(.data, fduper(path=new_paths))
 }
 
-#' add_dirs: Add files in directories to fduper object
+#' Add files in directories to fduper object path listing
+#'
+#' Provide a character vector of directory paths. The directory paths are searched
+#' and the resulting files are added to the paths in the fduper object.
+#'
+#' @param .data A fduper object
+#' @param path A vector of directory paths
+#' @param recursive A logical indicating whether or not to search the directories
+#'                  recursively, with default of TRUE
+#' @param ... Additional arguments to pass to the \code{get_files} command
+#' @return The modified fduper object with the additional paths added
+#' @examples
+#' f %>% add_dirs("~/my_directory")
+#' @seealso \code{\link{get_files}}
 #' @export
 add_dirs <- function(.data, path, recursive=TRUE, ...) {
   UseMethod("add_dirs")
@@ -50,7 +71,15 @@ add_dirs.fduper <- function(.data, path, ...) {
   dplyr::bind_rows(.data, fduper(path=new_paths))
 }
 
-#' remove_files: Remove character vector of files from fduper object
+#' Remove files from fduper object path listing
+#'
+#' Provide a character vector of file paths to remove from the paths in the fduper object.
+#'
+#' @param .data A fduper object
+#' @param files A vector of file paths
+#' @return The modified fduper object with the additional paths removed
+#' @examples
+#' f %>% remove_files("~/my_file.txt")
 #' @export
 remove_files <- function(.data, files) {
   UseMethod("remove_files")
@@ -64,9 +93,18 @@ remove_files.fduper <- function(.data, files) {
   filter(.data, !path %in% paths)
 }
 
-#' remove_files_by_pattern: Remove files by matching regex
+#' Remove files from fduper object path listing matching the provided regex
+#'
+#' Uses the provided regex pattern to compare the paths in the fduper object, and
+#' removes the files matching the regex pattern.
+#'
+#' @param .data A fduper object
+#' @param pattern A regex pattern to check existing paths in fduper object against
+#' @return The modified fduper object with the matching paths removed
+#' @examples
+#' f %>% remove_files_by_pattern("\\.txt$")
 #' @export
-remove_files_by_pattern <- function(.data, files) {
+remove_files_by_pattern <- function(.data, pattern) {
   UseMethod("remove_files_by_pattern")
 }
 #' @export
@@ -74,7 +112,16 @@ remove_files_by_pattern.fduper <- function(.data, pattern) {
   filter(.data, !grepl(pattern, path))
 }
 
-#' keep_files_by_pattern: Keep files by matching regex
+#' Keep files from fduper object path listing matching the provided regex
+#'
+#' Uses the provided regex pattern to compare the paths in the fduper object, and
+#' removes the files not matching the regex pattern.
+#'
+#' @param .data A fduper object
+#' @param files A vector of file paths
+#' @return The modified fduper object with non-matching paths removed
+#' @examples
+#' f %>% keep_files_by_pattern("\\.txt$")
 #' @export
 keep_files_by_pattern <- function(.data, files) {
   UseMethod("keep_files_by_pattern")
@@ -84,9 +131,22 @@ keep_files_by_pattern.fduper <- function(.data, pattern) {
   filter(.data, grepl(pattern, path))
 }
 
-#' remove_dir: Remove files in directories from fduper object
+#' Remove files in directories to fduper object path listing
+#'
+#' Provide a character vector of directory paths. The directory paths are searched
+#' and the resulting files are removed from the paths in the fduper object.
+#'
+#' @param .data A fduper object
+#' @param path A vector of directory paths
+#' @param recursive A logical indicating whether or not to search the directories
+#'                  recursively, with default of TRUE
+#' @param ... Additional arguments to pass to the \code{get_files} command
+#' @return The modified fduper object with the additional paths removed
+#' @examples
+#' f %>% remove_dirs("~/my_directory")
+#' @seealso \code{\link{get_files}}
 #' @export
-remove_dirs <- function(.data, path, ...) {
+remove_dirs <- function(.data, path, recursive=TRUE, ...) {
   UseMethod("remove_dirs")
 }
 #' @export

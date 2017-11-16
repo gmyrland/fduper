@@ -6,6 +6,19 @@
 \usage{
 identify(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{...}{Column names for grouping files as duplicates}
+}
+\value{
+The modified fduper object with duplicate groups labelled
+}
 \description{
-Label groups of items sharing certain values
+Groups the files in the fduper dataset by the columns pass in the dot arguments,
+then adds a column "group" with a unique value for each set of duplicates.
+}
+\examples{
+f \%>\% identify(size)
+f \%>\% identify(size, hash)
 }

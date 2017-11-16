@@ -6,6 +6,12 @@
 \usage{
 get_size(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The file size of the file in bytes
+}
 \description{
-Get file size in bytes
+Returns the file size date of a file in bytes
 }

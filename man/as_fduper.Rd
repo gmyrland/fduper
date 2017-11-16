@@ -2,10 +2,20 @@
 % Please edit documentation in R/fduper.R
 \name{as_fduper}
 \alias{as_fduper}
-\title{as_fduper: Add fduper to object class}
+\title{Add fduper to object class list}
 \usage{
 as_fduper(.data)
 }
+\arguments{
+\item{.data}{An object to be given class fduper}
+}
+\value{
+The modified object as class fduper
+}
 \description{
-as_fduper: Add fduper to object class
+Coerce to fduper object. Note that this function does not check for
+compatibility of the underlying object so use with care. In general,
+you would use this to convert a tibble or data frame to a fduper object
+to use the fduper S3 methods. Note that many of these methods expect
+a "path" column to exist and contain full file paths.
 }

@@ -6,6 +6,12 @@
 \usage{
 get_filename(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The filename without the directory
+}
 \description{
-Get filename
+Returns the basename of a file (the file name without the directory)
 }

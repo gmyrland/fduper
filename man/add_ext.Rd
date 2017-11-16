@@ -6,6 +6,16 @@
 \usage{
 add_ext(.data)
 }
+\arguments{
+\item{.data}{A fduper object}
+}
+\value{
+The modified fduper object with file extensions
+}
 \description{
-Add file extension
+Adds or overwrites a column named "ext", containing the file extension
+of each file.
+}
+\seealso{
+\code{\link{get_ext}}
 }

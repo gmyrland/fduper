@@ -6,6 +6,12 @@
 \usage{
 get_directoryname(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The directory path, without the filename
+}
 \description{
-Get directory name
+Returns the directory name of a file
 }

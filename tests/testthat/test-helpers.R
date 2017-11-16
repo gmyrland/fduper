@@ -18,9 +18,9 @@ test_that("helper functions execute", {
 
 test_that("hashing functions work", {
   expect_equal(
-    get_hash_(paste0(sample_path(), "/root_file.txt")),
-    get_unix_(paste0(sample_path(), "/root_file.txt")),
-    get_dos_(paste0(sample_path(),  "/root_file.txt")),
+    as.character(get_hash(paste0(sample_path(), "/root_file.txt"))),
+    as.character(get_unix(paste0(sample_path(), "/root_file.txt"))),
+    as.character(get_dos(paste0(sample_path(),  "/root_file.txt"))),
     "d41d8cd98f00b204e9800998ecf8427e"
   )
   expect_equivalent(

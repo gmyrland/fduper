@@ -2,10 +2,23 @@
 % Please edit documentation in R/methods-reducers.R
 \name{reduce}
 \alias{reduce}
-\title{Reduce fduper data to items sharing certain values}
+\title{Reduce fduper data to files which share certain values with other files.}
 \usage{
 reduce(.data, ...)
 }
+\arguments{
+\item{.data}{A fduper object}
+
+\item{...}{Column names for grouping files as duplicates or potential duplicates}
+}
+\value{
+The modified fduper object with non-duplicates removed
+}
 \description{
-Reduce fduper data to items sharing certain values
+Groups the files in the fduper dataset by the columns pass in the dot arguments,
+then eliminates groups that do not contain two or more files.
+}
+\examples{
+f \%>\% reduce(size)
+f \%>\% reduce(size, hash)
 }

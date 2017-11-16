@@ -2,10 +2,22 @@
 % Please edit documentation in R/methods.R
 \name{remove_files_by_pattern}
 \alias{remove_files_by_pattern}
-\title{remove_files_by_pattern: Remove files by matching regex}
+\title{Remove files from fduper object path listing matching the provided regex}
 \usage{
-remove_files_by_pattern(.data, files)
+remove_files_by_pattern(.data, pattern)
+}
+\arguments{
+\item{.data}{A fduper object}
+
+\item{pattern}{A regex pattern to check existing paths in fduper object against}
+}
+\value{
+The modified fduper object with the matching paths removed
 }
 \description{
-remove_files_by_pattern: Remove files by matching regex
+Uses the provided regex pattern to compare the paths in the fduper object, and
+removes the files matching the regex pattern.
+}
+\examples{
+f \%>\% remove_files_by_pattern("\\\\.txt$")
 }

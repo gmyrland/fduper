@@ -6,6 +6,12 @@
 \usage{
 get_ext(path)
 }
+\arguments{
+\item{path}{The path to a file}
+}
+\value{
+The file extension as a string
+}
 \description{
-Get file extension
+Returns the file extension of a file
 }
